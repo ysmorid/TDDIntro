@@ -10,8 +10,12 @@ public class Account {
 
     public int withdrawFunds(int withdraw) {
         int funds = 10;
-
-        funds-= withdraw;
+        if(withdraw > funds){
+            System.out.println("I'm sorry, you do not have enough to withdraw. Please select " + "$" + funds + " or less.");
+        }
+        else{
+            funds-= withdraw;
+        }
         return funds;
     }
 }

@@ -1,6 +1,5 @@
 package com.thoughtworks.tddintro.exercises.accountbalance;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -12,7 +11,6 @@ public class AccountTests {
     public void shouldIncreaseMyBalanceWhenIDepositMoney() {
         Account account = new Account();
         assertThat(account.addFunds(10), is(10));
-
     }
 
     @Test
@@ -23,8 +21,9 @@ public class AccountTests {
     }
 
     @Test
-    @Ignore  // Remove each @Ignore and implement test
+    // Remove each @Ignore and implement test
     public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal() {
-
+        Account account = new Account();
+        assertThat(account.withdrawFunds(20), is(10));
     }
 }

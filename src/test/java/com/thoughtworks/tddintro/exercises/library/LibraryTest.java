@@ -42,16 +42,21 @@ public class LibraryTest {
     }
 
     @Test
-    @Ignore // Remove each @Ignore and implement test
     public void shouldPrintNothingWhenThereAreNoBooks() {
+        library.listBooks();
 
-        // implement me
+        verify(printStream).println("");
     }
 
     @Test
-    @Ignore // Remove each @Ignore and implement test
     public void shouldPrintBothBookTitlesWhenThereAreTwoBooks() throws IOException {
-        // implement me
+        String title1 = "Book Title";
+        String title2 = "Second Book Title";
+        books.add(title1);
+        books.add(title2);
+
+        library.listBooks();
+        verify(printStream).println(title1 + "\n" + title2 + "\n");
     }
 
     @Test

@@ -9,20 +9,23 @@ public class AccountTests {
     @Test
     public void shouldIncreaseMyBalanceWhenIDepositMoney() {
         Account account = new Account();
-        assertThat(account.addFunds(10), is(10));
+        account.addFunds(10);
+        assertThat(account.displayFunds(), is (10));
     }
 
     @Test
     public void shouldDecreaseMyBalanceWhenIWithdrawMoney() {
         Account account = new Account();
         account.addFunds(10);
-        assertThat(account.withdrawFunds(10), is(0));
+        account.withdrawFunds(10);
+        assertThat(account.displayFunds(), is (0));
     }
 
     @Test
     public void shouldNotDecreaseMyBalanceWhenIWithdrawMoneyAndDoNotHaveEnoughToCoverTheWithdrawal() {
         Account account = new Account();
         account.addFunds(10);
-        assertThat(account.withdrawFunds(20), is(10));
+        account.withdrawFunds(20);
+        assertThat(account.displayFunds(), is (10));
     }
 }
